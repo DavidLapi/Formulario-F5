@@ -1,0 +1,136 @@
+/* Julia */
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(../images/Hogwarts.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario {
+    background-color: rgb(0, 164, 3);
+    width: 50%;
+    height: max-content;
+    margin: 1rem;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.90);
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px 0 rgb(59, 126, 32);
+}
+
+.formulario__titulo {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.formulario__grupo {
+    border: none;
+}
+
+.formulario__grupo__label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.formulario__grupo__input {
+    color: black;
+}
+
+.formulario__grupo__input:focus {
+    transition: box-shadow 0.6s linear;
+}
+
+.formulario__grupo__input[type="text"],
+.formulario__grupo__input[type="email"] {
+    width: 100%;
+    height: 25px;
+    border-radius: 0.5rem;
+    font-size: 16px;
+}
+
+.formulario__grupo__select {
+    width: 100%;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.formulario__grupo__textarea {
+    border-radius: 0.5rem;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/*Ramazan */
+.formulario__boton--glitter {
+    position: relative;
+    background: rgb(255, 255, 30);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.formulario__boton--glitter:hover {
+    box-shadow: 0 0 10px #f7aa00, 0 0 20px #f7aa00;
+}
+
+/* David */
+.formulario__boton--glitter::after { /*Este pseudo-elemento es como una "capa decorativa adicional" que no está en el HTML, pero se renderiza por CSS. */
+    content: ''; /*Necesario para que ::after exista. Crea un contenido vacío. Si no lo pones, el pseudo-elemento no se mostrará. */
+    position: absolute; /* Permite colocar este elemento en posición libre sobre su contenedor (el botón), usando top, left, etc. */
+    top: -50%; /* Mueve el pseudo-elemento hacia arriba y la izquierda más allá del borde del botón, para que pueda cubrirlo totalmente. */
+    left: -50%;
+    width: 200%;  /* Hace que el ::after sea el doble de grande que el botón, para asegurar que el efecto cubra toda el área. */
+    height: 200%;
+    background: radial-gradient(circle, rgb(216, 69, 69) 25%, transparent 10%) center/10px 10px; /* Aplica un fondo tipo “puntos de luz” o “brillos”:
+
+radial-gradient crea círculos con un borde difuminado.
+
+El color rgba(141, 56, 56, 0.8) es un tono rojizo semitransparente.
+
+El color cambia a transparente justo después del 10%.
+
+El fondo se repite en una cuadrícula de 10px x 10px gracias a center/10px 10px.
+
+Este patrón se parece a chispas de purpurina. */
+    opacity: 0; /* Por defecto, el efecto está invisible. */
+    transition: opacity 0.2s ease;  /* Hace que cuando cambie la opacidad, la transición sea suave en 0.2 segundos. */  
+    pointer-events: none; 
+}
+
+/* Julia */
+.formulario__boton--glitter:active::after { /* Esto aplica solo cuando haces clic en el botón. */
+    opacity: 1; /* Hace que el pseudo-elemento se vuelva visible. */
+    animation: glitter 1s forwards; /*  Inicia la animación llamada glitter, que dura 1 segundo.
+forwards = al terminar, conserva el estado final. */
+}
+
+@keyframes glitter {  /* Aquí defines los pasos de la animación llamada glitter. */
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1; /* Estado inicial:
+
+Tamaño normal (scale(1))
+
+Sin rotación
+
+Visible (opacity: 1) */
+    }
+    100% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0; 
+    }
+}
+
